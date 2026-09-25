@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "nome": "Azul",
+    "categoria": "cores",
+    "imagem": "imagens/azul-imagem.jpg",
+    "somNome": "sons/azul-som.mp3"
+  },
+  {
+    "id": 2,
+    "nome": "Verde",
+    "categoria": "cores",
+    "imagem": "imagens/verde-imagem.jpg",
+    "somNome": "sons/verde-som.mp3"
+  },
+  {
+    "id": 3,
+    "nome": "Amarelo",
+    "categoria": "cores",
+    "imagem": "imagens/amarelo-imagem.jpg",
+    "somNome": "sons/amarelo-som.mp3"
+  },
+  {
+    "id": 4,
+    "nome": "Cachorro",
+    "categoria": "animais",
+    "imagem": "imagens/cachorro-imagem.jpg",
+    "somNome": "sons/cachorro-som.mp3"
+  },
+  {
+    "id": 5,
+    "nome": "Gato",
+    "categoria": "animais",
+    "imagem": "imagens/gato-imagem.jpg",
+    "somNome": "sons/gato-som.mp3"
+  },
+  {
+    "id": 6,
+    "nome": "Saci Pererê",
+    "categoria": "folclore",
+    "imagem": "imagens/saci-perere-imagem.jpg",
+    "somNome": "sons/saci-perere-som.mp3"
+  },
+  {
+    "id": 7,
+    "nome": "Arara",
+    "categoria": "animais",
+    "imagem": "imagens/arara-imagem.jpg",
+    "somNome": "sons/arara-som.mp3"
+  },
+  {
+    "id": 8,
+    "nome": "Boto Cor De Rosa",
+    "categoria": "folclore",
+    "imagem": "imagens/boto-cor-de-rosa-imagem.jpg",
+    "somNome": "sons/boto-cor-de-rosa-som.mp3"
+  },
+  {
+    "id": 9,
+    "nome": "Cuca",
+    "categoria": "folclore",
+    "imagem": "imagens/cuca-imagem.jpg",
+    "somNome": "sons/cuca-som.mp3"
+  },
+  {
+    "id": 10,
+    "nome": "Curupira",
+    "categoria": "folclore",
+    "imagem": "imagens/curupira-imagem.jpg",
+    "somNome": "sons/curupira-som.mp3"
+  },
+  {
+    "id": 11,
+    "nome": "Elefante",
+    "categoria": "animais",
+    "imagem": "imagens/elefante-imagem.jpg",
+    "somNome": "sons/elefante-som.mp3"
+  },
+  {
+    "id": 12,
+    "nome": "Mula Sem Cabeça",
+    "categoria": "folclore",
+    "imagem": "imagens/mula-sem-cabeca-imagem.jpg",
+    "somNome": "sons/mula-sem-cabeca-som.mp3"
+  },
+  {
+    "id": 13,
+    "nome": "Rosa",
+    "categoria": "cores",
+    "imagem": "imagens/rosa-imagem.jpg",
+    "somNome": "sons/rosa-som.mp3"
+  },
+  {
+    "id": 14,
+    "nome": "Tigre",
+    "categoria": "animais",
+    "imagem": "imagens/tigre-imagem.jpg",
+    "somNome": "sons/tigre-som.mp3"
+  },
+  {
+    "id": 15,
+    "nome": "Vermelho",
+    "categoria": "cores",
+    "imagem": "imagens/vermelho-imagem.jpg",
+    "somNome": "sons/vermelho-som.mp3"
+  },
+  {
+    "id": 16,
+    "nome": "Letra A",
+    "categoria": "alfabeto",
+    "imagem": "imagens/letra-a-imagem.jpg",
+    "somNome": "sons/letra-a-som.mp3"
+  },
+  {
+    "id": 17,
+    "nome": "Letra B",
+    "categoria": "alfabeto",
+    "imagem": "imagens/letra-b-imagem.jpg",
+    "somNome": "sons/letra-b-som.mp3"
+  },
+  {
+    "id": 18,
+    "nome": "Letra C",
+    "categoria": "alfabeto",
+    "imagem": "imagens/letra-c-imagem.jpg",
+    "somNome": "sons/letra-c-som.mp3"
+  },
+  {
+    "id": 19,
+    "nome": "Letra D",
+    "categoria": "alfabeto",
+    "imagem": "imagens/letra-d-imagem.jpg",
+    "somNome": "sons/letra-d-som.mp3"
+  },
+  {
+    "id": 20,
+    "nome": "Letra E",
+    "categoria": "alfabeto",
+    "imagem": "imagens/letra-e-imagem.jpg",
+    "somNome": "sons/letra-e-som.mp3"
+  },
+  {
+    "id": 21,
+    "nome": "Bola",
+    "categoria": "objetos",
+    "imagem": "imagens/bola-imagem.jpg",
+    "somNome": "sons/bola-som.mp3"
+  },
+  {
+    "id": 22,
+    "nome": "Cadeira",
+    "categoria": "objetos",
+    "imagem": "imagens/cadeira-imagem.jpg",
+    "somNome": "sons/cadeira-som.mp3"
+  },
+  {
+    "id": 23,
+    "nome": "Copo",
+    "categoria": "objetos",
+    "imagem": "imagens/copo-imagem.jpg",
+    "somNome": "sons/copo-som.mp3"
+  },
+  {
+    "id": 24,
+    "nome": "Lápis",
+    "categoria": "alfabeto",
+    "imagem": "imagens/lapis-imagem.jpg",
+    "somNome": "sons/lapis-som.mp3"
+  },
+  {
+    "id": 25,
+    "nome": "Martelo",
+    "categoria": "objetos",
+    "imagem": "imagens/martelo-imagem.jpg",
+    "somNome": "sons/martelo-som.mp3"
+  },
+  {
+    "id": 26,
+    "nome": "Mesa",
+    "categoria": "objetos",
+    "imagem": "imagens/mesa-imagem.jpg",
+    "somNome": "sons/mesa-som.mp3"
+  },
+  {
+    "id": 27,
+    "nome": "Xícara",
+    "categoria": "objetos",
+    "imagem": "imagens/xicara-imagem.jpg",
+    "somNome": "sons/xicara-som.mp3"
+  }
+]
