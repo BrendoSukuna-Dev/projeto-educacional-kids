@@ -5,7 +5,7 @@ const multer = require("multer");
 const session = require("express-session");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Configuração do express-session
 app.use(
@@ -150,5 +150,5 @@ app.post(
 );
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`); //testando
 });
