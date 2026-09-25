@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Admin - Mundo dos Sons e Cores</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f8ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .card-container {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+      h2 {
+        color: #ff6b6b;
+        margin-top: 0;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #4ecdc4;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #38b2ac;
+      }
+      .hidden {
+        display: none;
+      }
+      .mensagem {
+        margin-top: 15px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .sucesso {
+        color: #2e7d32;
+      }
+      .erro {
+        color: #c62828;
+      }
+
+      /* --- AJUSTES DO OLHO NA BARRA DE SENHA --- */
+      .input-com-icone {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Dá o espaçamento no final da caixa de senha para o texto não ficar embaixo do olho */
+      .input-com-icone input {
+        padding-right: 40px !important;
+      }
+
+      /* Posiciona o olho exatamente no canto direito interno do input */
+      .icone-olho {
+        position: absolute;
+        right: 12px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 18px;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+        z-index: 2;
+      }
+
+      .icone-olho:hover {
+        opacity: 1;
+      }
+
+      /* Estilo do botão de voltar para a página principal */
+      .btn-voltar {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #666;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+
+      .btn-voltar:hover {
+        color: #ff6b6b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <a href="index.html" class="btn-voltar"
+        >⬅️ Voltar para a página inicial</a
+      >
+      <!-- Tela de Login -->
+      <div id="secao-login">
+        <h2>🔐 Acesso Admin</h2>
+        <div class="form-group">
+          <label for="usuario">Usuário:</label>
+          <input type="text" id="usuario" placeholder="Digite 'admin'" />
+        </div>
+        <div class="form-group">
+          <label for="senha">Senha:</label>
+          <div class="input-com-icone">
+            <input type="password" id="senha" placeholder="Digite a senha" />
+            <span
+              id="toggle-senha"
+              class="icone-olho"
+              onclick="alternarVisibilidadeSenha()"
+              >👁️</span
+            >
+          </div>
+        </div>
+        <button onclick="fazerLogin()">Entrar</button>
+      </div>
+
+      <!-- Tela de Cadastro (Oculta até o login) -->
+      <div id="secao-cadastro" class="hidden">
+        <h2>✨ Cadastrar Novo Item</h2>
+        <form id="form-cadastrar">
+          <div class="form-group">
+            <label for="nome">Nome do Item:</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              placeholder="Ex: Curupira"
+            />
+          </div>
+          <div class="form-group">
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria" required>
+              <option value="alfabeto">Alfabeto</option>
+              <option value="animais">Animais</option>
+              <option value="cores">Cores</option>
+              <option value="objetos">Objetos</option>
+              <option value="folclore">Folclore</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="imagem">Imagem (PNG/JPG):</label>
+            <input
+              type="file"
+              id="imagem"
+              name="imagem"
+              accept="image/*"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="som">Áudio (MP3):</label>
+            <input type="file" id="som" name="som" accept="audio/*" required />
+          </div>
+          <button type="submit">Salvar no Aplicativo</button>
+        </form>
+        <button style="background-color: #888" onclick="fazerLogout()">
+          Sair
+        </button>
+      </div>
+
+      <div id="mensagem" class="mensagem"></div>
+    </div>
+
+    <script>
+      async function fazerLogin() {
+        const usuario = document.getElementById("usuario").value;
+        const senha = document.getElementById("senha").value;
+        const msg = document.getElementById("mensagem");
+
+        try {
+          const res = await fetch("/api/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ usuario, senha }),
+          });
+          const data = await res.json();
+
+          if (res.ok) {
+            document.getElementById("secao-login").classList.add("hidden");
+            document
+              .getElementById("secao-cadastro")
+              .classList.remove("hidden");
+            msg.textContent = "";
+          } else {
+            msg.className = "mensagem erro";
+            msg.textContent = data.erro;
+          }
+        } catch (e) {
+          msg.className = "mensagem erro";
+          msg.textContent = "Erro ao conectar com o servidor.";
+        }
+      }
+
+      document
+        .getElementById("form-cadastrar")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const msg = document.getElementById("mensagem");
+          const formData = new FormData(e.target);
+
+          try {
+            const res = await fetch("/api/itens", {
+              method: "POST",
+              body: formData,
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+              msg.className = "mensagem sucesso";
+              msg.textContent = "Item cadastrado com sucesso! 🎉";
+              e.target.reset();
+            } else {
+              msg.className = "mensagem erro";
+              msg.textContent = data.erro || "Erro ao cadastrar.";
+            }
+          } catch (err) {
+            msg.className = "mensagem erro";
+            msg.textContent = "Erro de rede ao cadastrar item.";
+          }
+        });
+
+      async function fazerLogout() {
+        await fetch("/api/logout", { method: "POST" });
+        window.location.href = "index.html";
+        document.getElementById("secao-cadastro").classList.add("hidden");
+        document.getElementById("secao-login").classList.remove("hidden");
+        document.getElementById("mensagem").textContent = "";
+      }
+
+      function alternarVisibilidadeSenha() {
+        const campoSenha = document.getElementById("senha");
+
+        if (campoSenha.type === "password") {
+          campoSenha.type = "text";
+        } else {
+          campoSenha.type = "password";
+        }
+      }
+    </script>
+  </body>
+</html>
