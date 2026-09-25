@@ -163,7 +163,7 @@
   {
     "id": 24,
     "nome": "Lápis",
-    "categoria": "alfabeto",
+    "categoria": "objetos",
     "imagem": "imagens/lapis-imagem.jpg",
     "somNome": "sons/lapis-som.mp3"
   },
