@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundo dos Sons e Cores 🎨🎵</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mundo dos Sons e Cores 🎨🎵</h1>
+      <p>Clique nos cards para ouvir!</p>
+    </header>
+
+    <nav class="filtros">
+      <button onclick="carregarItens('todos')">🌟 Todos</button>
+      <button onclick="carregarItens('alfabeto')">🔤 Alfabeto</button>
+      <button onclick="carregarItens('animais')">🐶 Animais</button>
+      <button onclick="carregarItens('cores')">🎨 Cores</button>
+      <button onclick="carregarItens('folclore')">🌵 Folclore</button>
+      <button onclick="carregarItens('objetos')">📦 Objetos</button>
+    </nav>
+
+    <main>
+      <div id="grid-itens" class="grid-container"></div>
+    </main>
+
+    <!-- Rodapé com o atalho para a área administrativa -->
+    <footer>
+      <p>© Mundo dos Sons e Cores</p>
+      <a href="admin.html" class="link-admin">⚙️ Área do Admnistrador</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
