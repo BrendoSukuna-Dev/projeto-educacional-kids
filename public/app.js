@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/itens";
+const API_URL = "/api/itens";
 let todosOsItens = []; // Guarda a lista completa vinda do servidor
 
 // Função para buscar os itens no servidor
