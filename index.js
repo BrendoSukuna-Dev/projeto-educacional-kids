@@ -75,6 +75,19 @@ app.get("/api/itens", (req, res) => {
   );
 });
 
+// Rota para buscar os dados do jogo de alfabetização
+app.get("/api/jogo-alfabeto", (req, res) => {
+  const caminhoJson = path.join(__dirname, "data", "jogo-alfabeto.json");
+
+  fs.readFile(caminhoJson, "utf8", (err, data) => {
+    if (err) {
+      console.error("Erro ao ler o arquivo jogo-alfabeto.json:", err);
+      return res.status(500).json({ erro: "Erro ao carregar dados do jogo." });
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
 // 2. Rota de Login do Admin
 app.post("/api/login", (req, res) => {
   const { usuario, senha } = req.body;

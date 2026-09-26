@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo de Alfabetização - Mundo dos Sons e Cores</title>
+    <link rel="stylesheet" href="jogo.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="btn-voltar">⬅ Voltar</a>
+      <div class="modo-container" id="modo-container" style="display: none">
+        <span style="font-weight: bold">Modo:</span>
+        <button id="btn-alternar-modo" class="btn-modo">
+          Sequencial (A-Z)
+        </button>
+      </div>
+    </header>
+
+    <!-- TELA INICIAL (BOAS-VINDAS / PLAY) -->
+    <main class="jogo-card" id="tela-inicial">
+      <h1 style="color: #00838f; margin-bottom: 15px">Jogo do Alfabeto 🔤</h1>
+      <p style="font-size: 1.2rem; color: #555; margin-bottom: 30px">
+        Vamos aprender brincando com as imagens e as letras?
+      </p>
+      <button
+        id="btn-iniciar-jogo"
+        style="
+          background-color: #4caf50;
+          color: white;
+          border: none;
+          padding: 20px 40px;
+          font-size: 1.5rem;
+          font-weight: bold;
+          border-radius: 50px;
+          cursor: pointer;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        "
+      >
+        ▶️ Começar o Jogo
+      </button>
+    </main>
+
+    <!-- TELA DO JOGO (FICA ESCONDIDA ATÉ CLICAR NO PLAY) -->
+    <main class="jogo-card" id="tela-jogo" style="display: none">
+      <div class="pergunta-imagem-container">
+        <img
+          id="imagem-pergunta"
+          src=""
+          alt="Imagem do Desafio"
+          class="pergunta-img"
+        />
+      </div>
+
+      <button id="btn-audio-pergunta" class="btn-repetir-audio">
+        🔊 Ouvir Pergunta
+      </button>
+
+      <div class="opcoes-grid" id="container-opcoes"></div>
+
+      <div id="feedback-mensagem" class="feedback-mensagem"></div>
+      <div id="progresso-info" class="progresso-info">Letra 1 de 26</div>
+    </main>
+
+    <script src="jogo.js"></script>
+  </body>
+</html>
