@@ -1,0 +1,35 @@
+[
+  {
+    "id": "A",
+    "letra": "A",
+    "palavra": "Abelha",
+    "imagemPergunta": "imagens/jogos/jogo-abelha.png",
+    "imagemLetraCorreta": "imagens/alfabeto-a.png",
+    "somPergunta": "sons/jogos/pergunta-a.mp3",
+    "somAcerto": "sons/jogos/acerto-a.mp3",
+    "somErro": "sons/jogos/erro-a.mp3",
+    "corHex": "#FF5733"
+  },
+  {
+    "id": "B",
+    "letra": "B",
+    "palavra": "Bola",
+    "imagemPergunta": "imagens/jogos/jogo-bola.png",
+    "imagemLetraCorreta": "imagens/alfabeto-b.png",
+    "somPergunta": "sons/jogos/pergunta-b.mp3",
+    "somAcerto": "sons/jogos/acerto-b.mp3",
+    "somErro": "sons/jogos/erro-b.mp3",
+    "corHex": "#33A1FF"
+  },
+  {
+    "id": "C",
+    "letra": "C",
+    "palavra": "Carro",
+    "imagemPergunta": "imagens/jogos/jogo-carro.png",
+    "imagemLetraCorreta": "imagens/alfabeto-c.png",
+    "somPergunta": "sons/jogos/pergunta-c.mp3",
+    "somAcerto": "sons/jogos/acerto-c.mp3",
+    "somErro": "sons/jogos/erro-c.mp3",
+    "corHex": "#2ECC71"
+  }
+]
